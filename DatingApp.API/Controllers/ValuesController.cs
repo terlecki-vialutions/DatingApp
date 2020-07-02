@@ -43,20 +43,6 @@ namespace DatingApp.API.Controllers
             return Ok(value);
         }
 
-        // [HttpGet("{id}")]
-        // public IActionResult GetValue(string id)
-        // {
-        //     var value = _context.Values.First();
-            
-        //     return Ok(value);
-        // }
-
-        // [HttpGet("{str}")]
-        // public ActionResult<IEnumerable<string>> Get(string str)
-        // {
-        //     return new string[] { str };
-        // }
-
         // POST api/values
         [HttpPost]
         public void Post([FromBody] string value)
