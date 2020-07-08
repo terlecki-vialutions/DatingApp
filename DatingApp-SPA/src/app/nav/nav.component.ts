@@ -7,24 +7,31 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
-  styleUrls: ['./nav.component.css']
+  styleUrls: ['./nav.component.css'],
 })
 export class NavComponent implements OnInit {
   model: any = {};
 
-  constructor(public authService: AuthService, private alertify: AlertifyService, private router: Router) { }
+  constructor(
+    public authService: AuthService,
+    private alertify: AlertifyService,
+    private router: Router
+  ) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   login() {
-    this.authService.login(this.model).subscribe(next => {
-      this.alertify.success('logged in succesfully');
-    }, error => {
-      this.alertify.error(error);
-    }, () => {
+    this.authService.login(this.model).subscribe(
+      (next) => {
+        this.alertify.success('logged in succesfully');
+      },
+      (error) => {
+        this.alertify.error(error);
+      },
+      () => {
         this.router.navigate(['/members']);
-    });
+      }
+    );
   }
 
   loggedIn() {
@@ -36,5 +43,4 @@ export class NavComponent implements OnInit {
     this.alertify.message('logged out');
     this.router.navigate(['/home']);
   }
-
 }
