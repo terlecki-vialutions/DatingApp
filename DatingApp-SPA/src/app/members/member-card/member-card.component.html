@@ -2,7 +2,7 @@
   <div class="card-img-wrapper">
     <img
       class="card-img-top"
-      src="{{ user.photoUrl }}"
+      src="{{ user.photoUrl || '../../../assets/default_user.png' }}"
       alt="{{ user.knownAs }}"
     />
     <ul class="list-inline member-icons animate text-center">
@@ -19,7 +19,7 @@
       </li>
     </ul>
   </div>
-  <div class="card-body p-1">
+  <div class="card-body p-1 text-center">
     <h6 cass="card-title text-center mb-1">
       <i class="fa fa-user"></i> {{ user.knownAs }}, {{ user.age }}
     </h6>
